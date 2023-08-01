@@ -7,6 +7,52 @@
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+  <h1 class="title">Javascript logical question</h1>
+  <hr>
+  <div class="question1">
+    <p class="question">1.Create a simple calculator that takes two numbers and an operator (+, -, *, or /) as input and displays the result when a "Calculate" button is clicked.</p>
+    <input type="number" id="num1" placeholder="Enter first number"><br>
+    <input type="text" id="operator" placeholder="Enter operator (+, -, *, /)"><br>
+    <input type="number" id="num2" placeholder="Enter second number"><br>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>  
+  </div>
+  <div class="question2">
+    <p class="question">2. Create a random quote generator that displays a new quote from an array of quotes when a "Generate Quote" button is clicked.</p>
+    <p id="quote">Click "Generate Quote" to get a random quote!</p>
+<button onclick="generateQuote()">Generate Quote</button>  
+  </div>
+  <div class="question3">
+    <p class="question">3. Create a form with name and email fields. Display an error message if the name is empty or the email format is invalid when a "Submit" button is clicked.</p>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <button onclick="validateForm()">Submit</button>
+    <p id="error"></p>
+  </div>
+  <div class="question4">
+    <p class="question">4. Create a typing speed tester that displays a random sentence and calculates the typing speed (words per minute) when the user finishes typing.</p><br>
+    <p id="sentence">Type the sentence below:</p><br>
+    <p id="randomSentence">The quick brown fox jumps over the lazy dog.</p><br>
+    <textarea id="userInput" oninput="calculateTypingSpeed()"></textarea>
+<p id="typingSpeed"></p>
+  </div>
+  <div class="question5">
+    <p class="question">5. Create a password strength meter that evaluates the strength of a password and provides feedback as the user types.</p><br>
+      <input type="password" id="password" oninput="checkPasswordStrength()"><br>
+      <p id="passwordStrength"></p>
+  </div>
+  <div class="question6">
+    <p class="question">6. Create an image slider with previous and next buttons for manual navigation. The slider should also have an auto-play feature.</p><br>
+    <div class="image-slider">
+      <img src="./image/digital_camera.jpg" class="image1">
+      <img src="./image/rachit-tank-2cFZ_FB08UM-unsplash.jpg" class="image2">
+      <img src="./image/slide1-01.jpg" class="image3">
+    </div>
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+    <button onclick="toggleAutoPlay()">Toggle Auto-play</button>    
+  </div>
+  
   <script src="./script.js"></script>
 </body>
 </html>
