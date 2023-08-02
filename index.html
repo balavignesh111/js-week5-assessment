@@ -29,13 +29,13 @@
     <button onclick="validateForm()">Submit</button>
     <p id="error"></p>
   </div>
-  <div class="question4">
+  <!-- <div class="question4">
     <p class="question">4. Create a typing speed tester that displays a random sentence and calculates the typing speed (words per minute) when the user finishes typing.</p><br>
     <p id="sentence">Type the sentence below:</p><br>
     <p id="randomSentence">The quick brown fox jumps over the lazy dog.</p><br>
     <textarea id="userInput" oninput="calculateTypingSpeed()"></textarea>
 <p id="typingSpeed"></p>
-  </div>
+  </div> -->
   <div class="question5">
     <p class="question">5. Create a password strength meter that evaluates the strength of a password and provides feedback as the user types.</p><br>
       <input type="password" id="password" oninput="checkPasswordStrength()"><br>
@@ -51,6 +51,50 @@
     <button onclick="prevSlide()">Previous</button>
     <button onclick="nextSlide()">Next</button>
     <button onclick="toggleAutoPlay()">Toggle Auto-play</button>    
+  </div>
+  <div class="question7">
+    <p class="question">
+      7. Create a "Scroll to Top" button that appears when the user scrolls down and takes them to the top of the page when clicked.
+    </p>
+    <button onclick="scrollToTop()">Scroll to Top</button>
+  </div>
+  <!-- ques 8 has a logical error -->
+  <div class="question8">
+    <p class="question">
+      8. Create a countdown timer that starts from a specified time and updates in real-time until it reaches zero.
+    </p>
+    <input type="number" id="minutes" placeholder="Enter minutes">
+    <input type="number" id="seconds" placeholder="Enter seconds">
+    <button onclick="startTimer()">Start Timer</button>
+    <p id="timer"></p>
+  </div>
+  <div class="question9">
+    <p class="question">
+      9. Write a JavaScript function that accepts a row, column (to identify a particular cell) and a string to update the cell's contents.
+    </p>
+    <table id="myTable" border="1">
+      <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+      </tr>
+      <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+      </tr>
+      <tr>
+        <td>Row3 cell1</td>
+        <td>Row3 cell2</td>
+      </tr>
+    </table>
+    <form>
+      <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+  </div>
+  <div class="question10">
+    <p class="question">
+      10. Write a JavaScript function to parameterize a string. <br><br>
+      console.log(string_parameterize("Robin Singh from USA."));<br><br>
+    </p>
   </div>
   
   <script src="./script.js"></script>

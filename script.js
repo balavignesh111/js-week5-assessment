@@ -82,7 +82,6 @@ const checkPasswordStrength = ()=>{
 // gv
 let index = 0;
 const imageContainerEle = document.querySelectorAll('.image-slider img');
-console.log(imageContainerEle)
 // func
 const prevSlide = ()=>{
   index--;
@@ -123,3 +122,59 @@ const toggleAutoPlay = ()=>{
     imageContainerEle[index].style.display = "inline";
   },2000);
 }
+
+// 7 problem
+
+const scrollToTop = ()=>{
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// 8 prob
+
+const minuteEle = document.getElementById('minutes');
+const secEle = document.getElementById('seconds');
+const timerEle = document.getElementById('timer');
+
+function millisec(){
+  let totalTime = 0;
+  let secToMilliSec = Number(secEle.value);
+  let minToMilliSec = Number(minuteEle.value) * 60;
+  totalTime = (secToMilliSec + minToMilliSec * 1000) + Date.now(); 
+  return totalTime;
+}
+
+const startTimer = () =>{
+  let EndTime = millisec();
+  setInterval(()=>{
+  let currentTime = Date.now();
+  let diff = EndTime - currentTime;
+  let day = diff/(24*60*60*1000);
+  diff = Math.floor(diff%(24*60*60*1000));
+  let hrs = (diff/60*60*1000);
+  diff = Math.floor(diff%(60*60*1000));
+  let min = Math.floor(diff/(60*1000));
+  diff = Math.floor(diff%60*1000);
+  let sec = Math.floor(diff/1000);
+  timerEle.innerText = `${min}min ${sec}sec`
+  },1000)
+}
+
+// 9 prob
+function changeContent(){
+  let rows = prompt('enter row btw 0 to 2');
+  let column = prompt('enter column between 0 to 1');
+  let content = prompt('enter content');
+  const table = document.getElementById('myTable');
+  rows = Number(rows);
+  column = Number(column);
+  table.rows[rows].cells[column].innerText = content;
+}
+
+// 10 prob
+
+const string_parameterize = (str)=>{
+  return str.toLowerCase().split(" ").join("-");;
+}
+
+console.log(string_parameterize("Robin Singh from USA."));
