@@ -136,27 +136,32 @@ const minuteEle = document.getElementById('minutes');
 const secEle = document.getElementById('seconds');
 const timerEle = document.getElementById('timer');
 
-function millisec(){
+function endTime(){
   let totalTime = 0;
-  let secToMilliSec = Number(secEle.value);
-  let minToMilliSec = Number(minuteEle.value) * 60;
-  totalTime = (secToMilliSec + minToMilliSec * 1000) + Date.now(); 
+  let secToMilliSec = Number(secEle.value) * 1000;
+  let minToMilliSec = Number(minuteEle.value) * 60 * 1000;
+  totalTime = (secToMilliSec + minToMilliSec); 
   return totalTime;
 }
 
 const startTimer = () =>{
-  let EndTime = millisec();
-  setInterval(()=>{
+  let EndTime = endTime() + Date.now();
+  let timeOut = setInterval(()=>{
   let currentTime = Date.now();
-  let diff = EndTime - currentTime;
-  let day = diff/(24*60*60*1000);
-  diff = Math.floor(diff%(24*60*60*1000));
-  let hrs = (diff/60*60*1000);
-  diff = Math.floor(diff%(60*60*1000));
-  let min = Math.floor(diff/(60*1000));
-  diff = Math.floor(diff%60*1000);
-  let sec = Math.floor(diff/1000);
+  let distance = EndTime - currentTime;
+  console.log(`diff ${distance}`);
+  let day = Math.floor(distance / (1000 * 60 * 60 * 24));
+  distance = (distance % (1000 * 60 * 60 * 24));
+  let hrs = Math.floor(distance) / (1000 * 60 * 60);
+  distance = distance % (1000 * 60 * 60);
+  let min = Math.floor((distance) / (1000 * 60));
+  distance = (distance % (1000 * 60))
+  let sec =  Math.ceil((distance) / 1000);
   timerEle.innerText = `${min}min ${sec}sec`
+  if(distance < 0){
+    clearInterval(timeOut);
+    timerEle.innerText = `Time out`
+  }
   },1000)
 }
 
@@ -178,3 +183,4 @@ const string_parameterize = (str)=>{
 }
 
 console.log(string_parameterize("Robin Singh from USA."));
+
